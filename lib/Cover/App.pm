@@ -3,6 +3,16 @@ use Dancer ':syntax';
 
 our $VERSION = '0.1';
 
+hook before => sub {
+	debug('before');
+	my $x = rand;
+	if ($x < 0.5) {
+		$x = rand;
+	} else {
+		$x = rand;
+	}
+};
+
 get '/' => sub {
 	my $x = rand;
 	my $y = rand;
